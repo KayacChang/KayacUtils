@@ -1,6 +1,6 @@
 {
   "name": "@kayac/utils",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Game Utils Collection made by Kayac",
   "main": "index.js",
   "scripts": {
@@ -14,8 +14,8 @@
   "author": "Kayac",
   "license": "ISC",
   "dependencies": {
+    "@pixi/utils": "^5.1.0",
     "crypto-js": "^3.1.9-1",
-    "ismobilejs": "^0.5.2",
     "lodash": "^4.17.15",
     "mathjs": "^6.0.3",
     "numeral": "^2.0.6",
