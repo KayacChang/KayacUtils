@@ -3,4 +3,4 @@ export * from './performance';
 export * from './algorithm';
 export * from './function';
 
-export * from 'ismobilejs';
+export {isMobile} from 'ismobilejs';

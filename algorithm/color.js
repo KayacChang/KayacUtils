@@ -1,4 +1,3 @@
-
 export function hex2rgb(hex, out) {
     out = out || [];
 
@@ -24,6 +23,6 @@ export function string2hex(string) {
     return parseInt(string, 16);
 }
 
-export function rgb2hex(rgb) {
-    return (((rgb[0] * 255) << 16) + ((rgb[1] * 255) << 8) + (rgb[2] * 255 | 0));
+export function rgb2hex([r, g, b]) {
+    return Number('0x' + (r << 16 | g << 8 | b).toString(16));
 }
