@@ -8,34 +8,37 @@ import {
     ceilDependencies,
     signDependencies,
     divideDependencies,
-    roundDependencies,
     multiplyDependencies,
     modDependencies,
     floorDependencies,
     randomIntDependencies,
     randomDependencies,
+    compareDependencies
 } from 'mathjs';
 
 const config = {};
 
 const {
     abs, log10, ceil, sign,
-    divide, round, multiply,
+    divide, multiply,
     mod, floor, randomInt,
     random,
+    compare,
 } = create({
     absDependencies,
     log10Dependencies,
     ceilDependencies,
     signDependencies,
     divideDependencies,
-    roundDependencies,
     multiplyDependencies,
     modDependencies,
     floorDependencies,
     randomIntDependencies,
     randomDependencies,
+    compareDependencies,
 }, config);
+
+const {round} = Math;
 
 export {
     pi,
@@ -43,6 +46,7 @@ export {
     divide, round, multiply,
     mod, floor, randomInt,
     random,
+    compare,
 };
 
 
