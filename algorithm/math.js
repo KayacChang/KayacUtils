@@ -40,6 +40,10 @@ const {
 
 const {round} = Math;
 
+import add from 'ramda/src/add';
+import subtract from 'ramda/src/subtract';
+
+
 export {
     pi,
     abs, log10, ceil, sign,
@@ -47,6 +51,8 @@ export {
     mod, floor, randomInt,
     random,
     compare,
+    add,
+    subtract,
 };
 
 
