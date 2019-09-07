@@ -1,9 +1,17 @@
-export isArray from 'lodash/isArray';
-export isNumber from 'lodash/isNumber';
-export isFunction from 'lodash/isFunction';
-export isString from 'lodash/isString';
-export isSymbol from 'lodash/isSymbol';
+import isArray from 'lodash/isArray';
+import isNumber from 'lodash/isNumber';
+import isFunction from 'lodash/isFunction';
+import isString from 'lodash/isString';
+import isSymbol from 'lodash/isSymbol';
+import isError from 'lodash/isError';
+import isEqual from 'lodash/isEqual';
 
-
-export isError from 'lodash/isError';
-export isEqual from 'lodash/isEqual';
+export {
+    isArray,
+    isNumber,
+    isFunction,
+    isString,
+    isSymbol,
+    isError,
+    isEqual,
+};
