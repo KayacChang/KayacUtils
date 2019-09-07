@@ -7,4 +7,3 @@ export isSymbol from 'lodash/isSymbol';
 
 export isError from 'lodash/isError';
 export isEqual from 'lodash/isEqual';
-
