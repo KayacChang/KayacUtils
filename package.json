@@ -1,6 +1,6 @@
 {
   "name": "@kayac/utils",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Game Utils Collection made by Kayac",
   "main": "index.js",
   "scripts": {

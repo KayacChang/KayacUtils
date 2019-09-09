@@ -1,18 +1,26 @@
 /**
- *  wait ms milliseconds
- *  @param {number} ms
- *  @return {Promise}
+ * wait by time
+ * @param ms
+ * @return {Promise<number>}
  */
 export function wait(ms) {
-    return new Promise((r) => setTimeout(r, ms));
+    return new Promise(execute);
+
+    function execute(resolve) {
+        const id = setTimeout(() => resolve(id), ms);
+    }
 }
 
 /**
- *  wait for next frame
- *  @return {Promise}
+ * wait by frame
+ * @return {Promise<number>}
  */
 export function nextFrame() {
-    return new Promise((r) => requestAnimationFrame(r));
+    return new Promise(execute);
+
+    function execute(resolve) {
+        const id = requestAnimationFrame(() => resolve(id));
+    }
 }
 
 /**
@@ -25,4 +33,16 @@ export function timer() {
     return function get() {
         return performance.now() - start;
     };
+}
+
+export async function waitByFrameTime(time, condition = () => false) {
+    const duration = timer();
+
+    while (true) {
+        await nextFrame();
+
+        const dur = duration();
+
+        if (dur >= time || condition(dur)) return;
+    }
 }
