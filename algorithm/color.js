@@ -26,3 +26,13 @@ export function string2hex(string) {
 export function rgb2hex([r, g, b]) {
     return Number('0x' + (r << 16 | g << 8 | b).toString(16));
 }
+
+export function string2RGBA(source) {
+    const match = source.match(/^rgba\((\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3}),\s*(\d*(?:\.\d+)?)\)$/);
+    return match ? {
+        r: Number(match[1]),
+        g: Number(match[2]),
+        b: Number(match[3]),
+        a: Number(match[4]),
+    } : {};
+}
