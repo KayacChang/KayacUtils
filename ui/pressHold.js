@@ -21,10 +21,10 @@ export function pressHold(func, it) {
     return function call() {
         let holding = true;
 
-        it.once('pointerup', () => holding = false);
+        it.once('pointerup', clear);
+        it.once('pointerupoutside', clear);
 
         let done = func();
-
         (
             async function execute(getDuration) {
                 const duration = getDuration();
@@ -38,5 +38,12 @@ export function pressHold(func, it) {
                 return execute(getDuration);
             }
         )(timer());
+
+        function clear() {
+            holding = false;
+
+            it.off('pointerup', clear);
+            it.off('pointerupoutside', clear);
+        }
     };
 }
