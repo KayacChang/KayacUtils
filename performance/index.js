@@ -1,6 +1,7 @@
 
 import throttle from 'lodash/throttle';
 import debounce from 'lodash/debounce';
+import {nextFrame} from "../utils";
 
 export * from './pageLoad';
 export {throttle, debounce};
@@ -19,4 +20,12 @@ export function throttleBy(func) {
 
         return result;
     };
+}
+
+export function throttleByFrame(func) {
+    return throttleBy(async () => {
+        func();
+
+        await nextFrame();
+    });
 }
